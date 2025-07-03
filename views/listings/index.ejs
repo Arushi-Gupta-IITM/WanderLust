@@ -1,0 +1,127 @@
+<% layout("/layouts/boilerplate") %>
+<style>
+    #filters {
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .filter {
+        margin-right: 4rem;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        opacity: 0.7;
+        color: black;
+        text-decoration: none;
+    }
+    .filter:hover {
+        opacity: 1;
+        cursor: pointer;
+    }
+
+    .filter span {
+        font-size: 1rem;
+    }
+
+    .icon {
+        font-size: 1rem;
+    }
+
+    .form-switch {
+        display: inline-block;
+    }
+
+    .tax-info {
+        display: none;
+    }
+
+    .filter span {
+        font-size: 0.8rem;
+    }
+
+    .tax-toggle {
+        border: 1px solid black;
+        border-radius: 1rem;
+        height: 3rem;
+        width: 10rem;
+        padding: 0.8rem;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+</style>
+    
+    <div id="filters">
+
+            <a class="filter">
+                <i class="fa-solid icon fa-fire"></i> <br> <span>Trending</span>       
+            </a>
+            <a class="filter" href="/listings/searchByCategory/Rooms">
+                <i class="fa-solid icon fa-house"></i> <br> <span>Rooms</span>           
+            </a>
+            <a class="filter" href="/listings/searchByCategory/Farms">
+                <i class="fa-solid icon fa-tractor"></i> <br> <span>Farms</span>             
+            </a>
+            <a class="filter" href="/listings/searchByCategory/Iconic-Cities">
+                <i class="fa-solid icon fa-city"></i> <br> <span>Iconic Cities</span>           
+            </a>
+            <a class="filter" href="/listings/searchByCategory/Beaches">
+                <i class="fa-solid icon fa-umbrella-beach"></i> <br> <span>Beaches</span>            
+            </a>
+            <a class="filter" href="/listings/searchByCategory/Mountains">
+                <i class="fa-solid icon fa-mountain-sun"></i> <br> <span>Mountains</span>            
+            </a>
+            <a class="filter" href="/listings/searchByCategory/Castles">
+                <i class="fa-solid icon fa-place-of-worship"></i> <br> <span>Castles</span>           
+            </a>
+            <a class="filter" href="/listings/searchByCategory/Camping">
+                <i class="fa-solid icon fa-campground"></i> <br> <span>Camping</span>            
+            </a>
+            <a class="filter" href="/listings/searchByCategory/Arctic">
+                <i class="fa-solid icon fa-snowflake"></i> <br> <span>Arctic</span>            
+            </a>       
+
+        <div class="tax-toggle">
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="switchCheckDefault">
+                <label class="form-check-label" for="switchCheckDefault">Taxes</label>
+            </div> 
+        </div>    
+    </div>
+
+    <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 mt-3">
+        <% for(let listing of allListings) { %>
+
+            <a class="listing-card" href="/listings/<%= listing._id %>">
+                 <div class="card index-card">
+                    <img src="<%= listing.image.url %>" class="card-img-top" alt="listing_image">
+                    <div class="card-img-overlay"></div>
+                    <div class="card-body">
+                        <h5 class="card-title"><%= listing.title %></h5>
+                        <p class="card-text">&#8377; <%= listing.price.toLocaleString("en-IN") %> / day 
+                            <i class="tax-info">&nbsp; + 18% GST</i>
+                        </p>
+                    </div>
+                </div>
+            </a>         
+
+        <% } %>
+
+    </div>
+
+<script>
+    let taxSwitch = document.getElementById("switchCheckDefault");
+    taxSwitch.addEventListener("click", () => {
+        let taxInfo = document.getElementsByClassName("tax-info");
+        for(let info of taxInfo) {
+            if(info.style.display !== "inline") {
+                info.style.display = "inline";
+            } else {
+                info.style.display = "none";
+            }            
+        }
+    });
+</script>
+    
+
+
+

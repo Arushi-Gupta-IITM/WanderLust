@@ -1,0 +1,85 @@
+<% layout("/layouts/boilerplate") %>
+<body>
+
+    <div class="row">
+        <div class="col-8 offset-2"> 
+
+            <h2> Create a new Listing </h2>
+            <br>
+
+            <form method="POST" action="/listings" novalidate class="needs-validation" enctype="multipart/form-data">
+
+                <div>
+                    <label for="title" class="form-label input-label">Title:</label>
+                    <input type="text" id="title" name="listing[title]" class="form-control" placeholder="Enter a catchy title" required>
+                    <div class="valid-feedback">Title looks good!</div>
+                    <div class="invalid-feedback">Title should be valid!</div>
+                </div>       
+                <br> 
+
+                <div>
+                    <label for="description" class="form-label input-label">Description:</label>
+                    <textarea id="description" name="listing[description]" class="form-control" required></textarea>
+                    <div class="valid-feedback">Description looks good!</div>
+                    <div class="invalid-feedback">Please enter a short description!</div>
+                </div>
+                <br>
+                <div>
+                    <label for="image" class="form-label input-label">Upload Listing Image:</label>
+                    <input type="file" name="listing[image][url]" class="form-control" id="image" required>
+                </div>
+                <br> 
+
+                <div class="row">
+                    <div class="col-8">
+                        <label for="category" class="form-label input-label">Category: </label>
+                        <select id="category" class="form-select" name="listing[category]" aria-label="Default select example">
+                            <option selected>Open this select menu</option>
+                            <option value="Rooms">Rooms</option>
+                            <option value="Farms">Farms</option>
+                            <option value="Mountains">Mountains</option>
+                            <option value="Camping">Camping</option>
+                            <option value="Iconic-Cities">Iconic-Cities</option>
+                            <option value="Beaches">Beaches</option>
+                            <option value="Castle">Castle</option>
+                            <option value="Arctic">Arctic</option>                   
+                        </select>
+                        <div class="valid-feedback">Category looks good!</div>
+                        <div class="invalid-feedback">Category should be valid!</div>
+                    </div>
+                    <br> <br>
+                    
+                    <div class="col-4">
+                        <label for="price" class="form-label input-label">Price:</label>
+                        <input name="listing[price]" id="price" class="form-control" placeholder="₹ 1000 / day" required>
+                        <div class="valid-feedback">Price looks good!</div>
+                        <div class="invalid-feedback">Price should be valid!</div>
+                    </div> 
+                </div>    
+                <br>           
+
+                <div>
+                    <label for="country" class="form-label input-label">Country:</label>
+                    <input type="text" name="listing[country]" id="country" class="form-control" placeholder="India" required>
+                    <div class="valid-feedback">Country looks good!</div>
+                    <div class="invalid-feedback">Country should be valid!</div>
+                </div>        
+                <br> 
+
+                <div>
+                    <label for="location" class="form-label input-label">Location:</label>
+                    <input type="text" id="loacation" class="form-control" name="listing[location]" placeholder="Jaipur, Rajasthan" required>
+                    <div class="valid-feedback">Location looks good!</div>
+                    <div class="invalid-feedback">Location should be valid!</div>
+                </div>       
+                <br> 
+
+                <button class="btn add-btn">Add Listing</button>
+
+                <br> <br>
+
+            </form>
+        </div>
+     </div>
+    
+</body>

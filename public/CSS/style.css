@@ -1,0 +1,167 @@
+body {
+  font-family: "Plus Jakarta Sans", sans-serif !important;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container {
+    flex: 1;
+}
+
+/* Navbar */
+
+.navbar {
+    height: 5rem;
+    background-color: white;
+}
+
+.fa-compass {
+    color: #fe424d;
+    font-size: 2rem;
+}
+
+.nav-link {
+    color: #222222 !important;
+}
+
+/* Footer */
+
+.footer-info-links {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+}
+
+.footer-info-brand {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-info-socials {
+    width: 100%;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-info-socials i {
+    margin-right: 1rem;
+}
+
+
+.footer-info-links a{
+    text-decoration: none;
+    color: #222222;
+    margin-right: 1rem;
+}
+
+.footer-info-links a:hover{
+    text-decoration: underline;
+}
+
+.footer-info {
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: space-evenly;
+    height: 8rem;
+    background-color: #ebebeb;
+}
+
+/* Card-Effect */
+
+.index-card {
+    border: none !important;
+    height: 30rem !important;
+    width: 25rem !important;
+}
+
+
+.show-card {
+    border: none !important;
+    width: 100% !important;
+}
+
+.show-card-img {
+    width: 100%;
+    margin: auto;
+}
+
+.card-img-top {
+    border-radius: 1rem !important;
+    width: 100% !important;
+    object-fit: cover !important;
+    height: 20rem !important;
+}
+
+.listing-card {
+    text-decoration: none;
+}
+
+.card-img-overlay {
+    opacity: 0;
+}
+
+.card-img-overlay:hover {
+    opacity: 0.2;
+    background-color: white;
+}
+
+.review-card{
+    padding: 1rem !important;
+    width: 25rem;
+}
+
+.review-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* New and Show Page */
+
+.add-btn {
+    background-color: red !important;
+    color: white !important;
+    font-weight: bold  !important;
+}
+
+.input-label {
+    font-weight: bold;
+}
+
+.show-img {
+    height: 30vh !important;
+}
+
+.show-card {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.btn-dark {
+    font-weight: bold !important;
+}
+
+.card-review {
+    border: 0.1rem solid gray;
+    border-radius: 0.5rem;
+    padding: 1rem;
+}
+
+.nav-btns {
+    margin: 0.5rem;
+}
+
+/* Map */
+#map { 
+    height: 25rem;
+    width: 100vh; 
+    margin-top: 2rem;
+    margin-left: 5rem;
+}

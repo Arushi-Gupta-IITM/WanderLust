@@ -1,0 +1,91 @@
+<% layout("/layouts/boilerplate") %>
+<body>
+    <br>
+
+    <div class="row">
+        <div class="col-8 offset-2"> 
+
+            <h2> Update Listing </h2>
+            <br> 
+
+            <form method="POST" action="/listings/<%= listing._id %>/edit?_method=PUT" novalidate class="needs-validation" enctype="multipart/form-data">
+
+                <div>
+                    <label for="title" class="form-label input-label">Title:</label>
+                    <input type="text" name="listing[title]" value="<%= listing.title %>" class="form-control" id="title" required>
+                    <div class="valid-feedback">Title looks good!</div>
+                    <div class="invalid-feedback">Title should be valid!</div>
+                </div>       
+                <br> 
+
+                <div>
+                    <label for="description" class="form-label input-label">Description:</label>
+                    <textarea id="description" name="listing[description]" class="form-control" required> <%= listing.description %>  </textarea>
+                    <div class="valid-feedback">Description looks good!</div>
+                    <div class="invalid-feedback">Please enter a short description!</div>
+                </div>        
+                <br> 
+
+                <div class="mb-3">
+                    Original Listing Image:
+                    <img src="<%= originalImageUrl %>">
+                </div>
+
+                <div>
+                    <label for="image" class="form-label input-label">Upload New Image</label>
+                    <input type="file" name="listing[image][url]" id="image" class="form-control">
+                </div>        
+                <br> 
+
+                <div class="row">
+                    <div class="col-8">
+
+                        <label for="category" class="form-label input-label">Category: </label>
+                        <select id="category" class="form-select" name="listing[category]" aria-label="Default select example" required>
+                            <option selected value="<%= listing.category %>">Open this select menu</option>
+                            <option value="Rooms">Rooms</option>
+                            <option value="Farms">Farms</option>
+                            <option value="Mountains">Mountains</option>
+                            <option value="Camping">Camping</option>
+                            <option value="Iconic-Cities">Iconic-Cities</option>
+                            <option value="Beaches">Beaches</option>
+                            <option value="Castle">Castle</option>
+                            <option value="Arctic">Arctic</option>                   
+                        </select>
+                        <div class="valid-feedback">Category looks good!</div>
+                        <div class="invalid-feedback">Category should be valid!</div>
+                     </div>
+
+                <div class="col-4">
+                    <label for="price" class="form-label input-label">Price:</label>
+                    <input type="number" name="listing[price]" value="<%= listing.price %>" id="price" class="form-control" required>
+                    <div class="valid-feedback">Price looks good!</div>
+                    <div class="invalid-feedback">Price should be valid!</div>
+                </div>     
+                </div>
+                <br> 
+
+                <div>
+                    <label for="country" class="form-label input-label">Country:</label>
+                    <input type="text" name="listing[country]" value="<%= listing.country %>" id="country" class="form-control" required>
+                    <div class="valid-feedback">Country looks good!</div>
+                    <div class="invalid-feedback">Country should be valid!</div>
+                </div>        
+                <br>
+
+                <div>
+                    <label for="location" class="form-label input-label">Location:</label>
+                    <input type="text" name="listing[location]" value="<%= listing.location %>" id="location" class="form-control" required>
+                    <div class="valid-feedback">Location looks good!</div>
+                    <div class="invalid-feedback">Location should be valid!</div>
+                </div>        
+                <br>
+
+                <button class="btn add-btn">Edit Listing</button>
+                <br> <br>
+
+            </form>
+        </div>
+    </div>
+    
+</body>

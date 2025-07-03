@@ -1,0 +1,41 @@
+<nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
+
+  <div class="container-fluid">
+
+    <a class="navbar-brand" href="/listings"><i class="fa-solid fa-compass"></i></a>
+
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+
+      <div class="navbar-nav">
+        <a class="nav-link" href="/listings">Explore</a>               
+      </div>
+
+      <form class="d-flex ms-auto" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search Destinations"/>
+        <button class="btn btn-outline-danger" type="submit"><b> Search </b></button>
+      </form>
+
+      <div class="navbar-nav ms-auto">
+        <a class="nav-link mt-2" href="/listings/new">Airbnb your Home</a> 
+        <% if(!currUser) { %>
+
+          <form method="GET" action="/signup" class="nav-btns">
+            <button class="btn btn-outline-danger"><b>Sign Up</b></button>
+          </form>
+
+          <form method="GET" action="/login" class="nav-btns">
+            <button class="btn btn-outline-danger"><b>Log In</b></button>
+          </form>
+
+        <% } %>
+
+        <% if(currUser) { %>
+          <form method="GET" action="/logout" class="nav-btns">
+            <button class="btn btn-outline-dark"><b>Log Out</b></button>
+          </form>
+        <% } %>     
+      </div>
+
+    </div>
+  </div>
+</nav>
