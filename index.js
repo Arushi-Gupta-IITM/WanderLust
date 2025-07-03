@@ -92,6 +92,10 @@ app.get("/demouser", async (req, res) => {
     res.send(registerdUser);
 });
 
+app.get("/", (req, res) => {
+    res.render("home.ejs");
+});
+
 //routes using Router
 app.use("/listings", listingRouter);
 app.use("/listings/:id/reviews", reviewRouter);
